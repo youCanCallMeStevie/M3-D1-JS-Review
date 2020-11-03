@@ -200,7 +200,23 @@ Types of angles:
     Acute angle: An angle between 0 and 90 degrees.
     Right angle: An 90 degree angle.
     btuse angle: An angle between 90 and 180 degrees.
-    Straight angle: A 180 degree angle.
+    Straight angle: A 180 degree angle. */
+
+    const typeOfAngle=(num)=>{
+
+        if(num>0 && num<90){
+            return "Acute angle"
+        }else if(num===90){
+            return "Right angle"
+        }else if(num>90 && num<180){
+            return "Obtuse angle"
+        }else if(num===180){
+            return "Straight angle"
+        }
+    }
+
+
+    /*
 13)
 Create a function to find the index of the greatest element of a given array of integers
 14)
@@ -288,3 +304,40 @@ const createAcronym=(phrase)=>{
 console.log(createAcronym("British Broadcasting Corporation"));
 
 
+function spinWords(backward) {
+
+    let sentence = "";
+    let separate = backward.split(" ");
+    
+    for (var i = 0; i < separate.length; i++) {
+      if (sentence) sentence += ' ';
+      if (separate[i].length >= 5) {
+        sentence += separate[i].split("").reverse().join("");
+      } else {
+        sentence += separate[i];
+      }
+    }
+    return sentence;
+  }
+  
+  console.log(spinWords("Hey fellow warriors"));
+
+  
+  
+var numbers = [2,4,6,8,10,12,14,16,17,18,20];
+
+function findOutlier(arr) {
+    var odds = arr.filter(function (number) {
+    return !!(number % 2)
+  });
+
+  var evens = arr.filter(function (number) {
+    return !(number % 2)
+  });
+
+  var result = (odds.length < evens.length) ? odds.pop() : evens.pop();
+
+  return result;
+}
+
+findOutlier(numbers[]);
